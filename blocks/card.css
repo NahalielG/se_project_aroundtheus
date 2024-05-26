@@ -39,12 +39,11 @@
        align-items: center;
        border: none;
        cursor: pointer;
+       flex-shrink: 0;
    }
 
    .card__like-button:hover {
        opacity: 0.5;
    }
 
-   @media screen and (max-width:320px) {
-    
-   }
+  
