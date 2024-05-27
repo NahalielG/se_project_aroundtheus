@@ -1,11 +1,11 @@
-
-   .card {
+  .card {
        display: flex;
        flex-direction: column;
        border-radius: 10px;
        list-style-type: none;
        overflow: hidden;
    }
+   
    .card__image {
        width: 282px;
        height: 282px;
