@@ -20,5 +20,3 @@
   Below is a link to my youtube video of me walking through and giving a overview of my project,and how i designed it. Also a link to my github repository with a indepth view of the code Enjoy ! 😎
  
   https://youtu.be/XJeRjfgdZz0
-
-  https://github.com/pablobetheplug/se_project_aroundtheus
