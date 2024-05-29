@@ -92,6 +92,7 @@
     justify-content: center;
     width: 100%;
     width: 282px;
+    padding-top:30px;
   }
 
   .profile__add-button {
@@ -105,9 +106,8 @@
     border: none;
     margin: 0;
     margin-left: 10px;
-    margin-top: 46px;
     border: 1px solid #FFF;
-
+    margin-top: 5px;
   }
 
   .profile__description {
@@ -117,15 +117,15 @@
     margin: 0;
     padding-bottom: 36px;
     line-height: 16.94px;
-
+    padding-top:14px;
   }
 
   .profile__title {
     font-size: 22px;
-    padding-top: 30px;
     white-space: nowrap;
     overflow: hidden;
     line-height: 26.63px;
+    max-width:240px;
   }
 
   .profile__image {
