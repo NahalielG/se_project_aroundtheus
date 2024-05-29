@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
-
 }
 
 .profile__description {
@@ -82,8 +81,6 @@
   .profile {
     flex-direction: column;
     width: 282px;
-    
-
   }
 
   .profile__info {

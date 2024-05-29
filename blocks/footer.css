@@ -5,13 +5,10 @@
 }
 
 .footer__copyright {
-  gap: 0px;
   color: #545454;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.78px;
-  text-align: left;
-  justify-content: space-around;
   margin: 0;
   font-family: Inter, Arial, Helvetica, sans-serif;
 }
@@ -26,7 +23,5 @@
   .footer__copyright {
     font-size: 14px;
     line-height: 16.94px;
-    text-align: left;
-
   }
 }

@@ -1,6 +1,7 @@
 .cards {
     margin-top: 51px;
 }
+
 .cards__list {
     display: grid;
     justify-content: center;
