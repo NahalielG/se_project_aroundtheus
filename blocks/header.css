@@ -1,6 +1,7 @@
 .header {
   margin-top: 45px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding:0;
 
 }
 
@@ -14,8 +15,10 @@
   .header {
     margin: 0;
     box-sizing: border-box;
-    width: 100%;
-    padding:0
+    padding:0;
+    width: calc(100% + 20px);
+    margin-left: -10px; 
+    margin-right: -10px;
   }
 
   .header__logo {
