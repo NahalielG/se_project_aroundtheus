@@ -100,10 +100,7 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    border: none;
-    margin: 0;
     margin-left: 10px;
-    border: 1px solid #FFF;
     margin-top: 5px;
   }
 
@@ -119,8 +116,6 @@
 
   .profile__title {
     font-size: 22px;
-    white-space: nowrap;
-    overflow: hidden;
     line-height: 26.63px;
     max-width:240px;
   }
