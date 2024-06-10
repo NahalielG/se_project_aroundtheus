@@ -32,6 +32,8 @@ bottom:calc(100% + 5px);
 left:calc(100% + 5px);
 cursor: pointer;
 border: none;
+
+
 }
 
 .modal__heading { 
@@ -78,10 +80,13 @@ font-size: 14px;
 }
 
 @media screen and (max-width:320px){
-    .modal__container{
+   .modal{
+    position: fixed;
+   }
+  .modal__container{
      min-width: 282px; 
      width: 282px;
-     top: 123px;
+     top: 81px;
      left: 19px;
      border: 1px 0px 0px 0px;
      opacity: 0px;
