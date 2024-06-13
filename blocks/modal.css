@@ -1,5 +1,5 @@
 .modal {
-display: flex;
+/*display: flex;*/
 justify-content: center;
 align-items: center;
 position: fixed;
@@ -9,8 +9,11 @@ bottom: 0;
 right: 0 ;
 z-index: 999;
 background-color: rgba(0,0,0,0.5);
+display: none;
 }
-
+.modal__opened{
+  display: flex;
+}
 .modal__container {
  background-color: white;
  padding:36px;
@@ -93,7 +96,7 @@ font-size: 14px;
      position: fixed;
     }
 
-  .modal__close{
+  .modal__close{ 
     width: 26px;
     height: 26px;
     position: absolute;
