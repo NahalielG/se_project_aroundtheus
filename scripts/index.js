@@ -30,15 +30,45 @@ const initialCards = [
     },
 ];
 
-
+/* -------------------------------------------------------------------------- */
+/*                                   ELEMENT                                  */
+/* -------------------------------------------------------------------------- */
  const profileEditButton = document.querySelector("#profile-edit-button");
- const profileCloseButton = document.querySelector(".modal__close")
+ const profileCloseButton = document.querySelector(".modal__close");
  const profileEditModal = document.querySelector("#profile-edit-modal");
- 
- profileEditButton.addEventListener("click", () => {
-   profileEditModal.classList.add("modal__opened")
- } )
+ const profileTitle = document.querySelector("#profile-title");
+ const profileDescription = document.querySelector("#profile-description");
+ const profileTitleInput = document.querySelector("#profile-title-input")
+ const profileDescriptionInput = document.querySelector("#profile-description-input");
+ const profileEditForm = profileEditModal.querySelector(".modal__form");
 
- profileCloseButton.addEventListener("click", () => {
-    profileEditModal.classList.remove("modal__opened")
- } )
+/* -------------------------------------------------------------------------- */
+/*                                  FUNCTIONS                                 */
+/* -------------------------------------------------------------------------- */
+ function closePopup(){
+    profileEditModal.classList.remove("modal__opened");
+ }
+
+ /* -------------------------------------------------------------------------- */
+ /*                               EVENT HANDLERS                               */
+ /* -------------------------------------------------------------------------- */
+
+ function handleProfileEditSubmit (e) {
+    e.preventDefault();
+    profileTitle.textContent = profileTitleInput.value;
+    profileDescription.textContent = profileDescriptionInput.value;
+    closePopup();
+   }
+
+/* -------------------------------------------------------------------------- */
+/*                               EVENT LISTENERS                              */
+/* -------------------------------------------------------------------------- */
+ profileEditButton.addEventListener("click", () => {
+  profileTitleInput.value = profileTitle.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+   profileEditModal.classList.add("modal__opened");
+ } );
+
+ profileCloseButton.addEventListener("click", closePopup);
+
+ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
