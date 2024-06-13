@@ -35,9 +35,8 @@ bottom:calc(100% + 5px);
 left:calc(100% + 5px);
 cursor: pointer;
 border: none;
-
-
 }
+
 
 .modal__heading { 
 color: black;
