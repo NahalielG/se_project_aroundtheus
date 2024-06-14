@@ -48,7 +48,7 @@ const initialCards = [
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
  function closePopup(){
-    profileEditModal.classList.remove("modal__opened");
+    profileEditModal.classList.remove("modal_opened");
  }
  function  getCardElement(cardData) {
     const cardElement = cardTemplate.cloneNode(true);
@@ -77,7 +77,7 @@ const initialCards = [
  profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-   profileEditModal.classList.add("modal__opened");
+   profileEditModal.classList.add("modal_opened");
  } );
 
  profileCloseButton.addEventListener("click", closePopup);
@@ -88,6 +88,6 @@ const initialCards = [
 /*                                    LOOPS                                   */
 /* -------------------------------------------------------------------------- */
 for (let i = 0; i < initialCards.length; i++) {
-    let card = getCardElement(initialCards[i]);
+    const card = getCardElement(initialCards[i]);
     cardListEl.append(card);
   }
