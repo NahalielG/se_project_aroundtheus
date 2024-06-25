@@ -47,22 +47,58 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 const cardListEl = document.querySelector(".cards__list");
 
+const cardAddPopUp = document.querySelector("#profile-add");
+const cardAddButton = document.querySelector("#profile-add-button");
+const pictureNameInput = document.querySelector("#pic-name-input")
+const pictureLinkInput = document.querySelector("#link-input")
+const cardAddCloseButton = document.querySelector("#add-close");
+const cardAddForm = document.querySelector("#add-card-form");
+const cardImageModal = document.querySelector("#card__image-modal");
+const modalImagePopup = document.querySelector(".modal__image");
+const modalImageTitle = document.querySelector(".modal__title");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
+function handleImageClick() {
+ cardImageModal.classList.add("modal_opened")
+}
 function closePopup() {
   profileEditModal.classList.remove("modal_opened");
+  cardAddPopUp.classList.remove("modal_opened")
+  cardImageModal.classList.remove("modal_opened")
 }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const trashButton = cardElement.querySelector(".card__delete-button");
+
+  likeButton.addEventListener("click", () => {
+  likeButton.classList.toggle("card__like-button_active");
+  });
+ cardImageEl.addEventListener("click",() => {
+  modalImagePopup.src = cardData.link;
+  modalImageTitle.textContent =cardData.name;
+  handleImageClick()
+ })
+
+trashButton.addEventListener("click", (e) => {
+ e.target.closest(".card").remove();
+});
 
   cardTitleEl.textContent = cardData.name;
   cardImageEl.alt = cardData.name;
   cardImageEl.src = cardData.link;
   return cardElement;
+
 }
+
+function renderCard(cardElement,container){
+  container.prepend(cardElement);
+}
+ 
+
 /* -------------------------------------------------------------------------- */
 /*                               EVENT HANDLERS                               */
 /* -------------------------------------------------------------------------- */
@@ -74,23 +110,47 @@ function handleProfileEditSubmit(e) {
   closePopup();
 }
 
+
+
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
 /* -------------------------------------------------------------------------- */
+
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   profileEditModal.classList.add("modal_opened");
 });
 
-profileCloseButton.addEventListener("click", closePopup);
+cardAddButton.addEventListener("click", () => {
+  cardAddPopUp.classList.add("modal_opened");
+});
+cardAddCloseButton.addEventListener("click",closePopup);
 
+profileCloseButton.addEventListener("click", closePopup);
+ 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
+cardImageModal.addEventListener("click", closePopup);
+cardAddForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const link = e.target.link.value;
+  const title = e.target.title.value;
+  const cardView = getCardElement({
+    name: title,
+    link:link,
+  });
+  renderCard(cardView,cardListEl);
+  closePopup(cardAddPopUp);
+})
+ 
 /* -------------------------------------------------------------------------- */
 /*                                    LOOPS                                   */
 /* -------------------------------------------------------------------------- */
-for (let i = 0; i < initialCards.length; i++) {
-  const card = getCardElement(initialCards[i]);
-  cardListEl.append(card);
-}
+
+initialCards.forEach((cardData) => {
+  const cardView = getCardElement(cardData)
+  renderCard(cardView,cardListEl);
+});
+
+

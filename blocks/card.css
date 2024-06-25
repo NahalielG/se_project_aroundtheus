@@ -4,8 +4,9 @@
        border-radius: 10px;
        list-style-type: none;
        overflow: hidden;
+       position: relative;
    }
-   
+  
    .card__image {
        width: 282px;
        height: 282px;
@@ -38,12 +39,28 @@
        display: flex;
        align-items: center;
        border: none;
-       cursor: pointer;
        flex-shrink: 0;
    }
-
+   .card__like-button_active {
+    background-image: url(../images/Union.svg);
+   }
+        
+  .card__delete-button{
+    background: transparent url(../images/Trash\ button.svg) center no-repeat ;
+    width: 18px;
+    height: 19px;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .card__delete-button:hover{
+    opacity: 0.6;
+}
+  
    .card__like-button:hover {
        opacity: 0.5;
-   }
-
+       cursor: pointer;
+   } 
   

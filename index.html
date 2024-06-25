@@ -12,7 +12,7 @@
     <header class="header page__section">
         <img src="./images/Vectorlogo.svg" class="header__logo" alt="Around the Us">
     </header>
-     <div class="page__content">
+    <div class="page__content">
             <main class="content">
                 <section class="profile page__section">
                     <img src="./images/jacques-cousteau.jpg" alt="jacques-cousteau" class="profile__image">
@@ -21,7 +21,7 @@
                         <button type="button" class="profile__edit-button" id="profile-edit-button"></button>
                         <p class="profile__description" id="profile-description">Explorer</p> 
                     </div>
-                    <button type="button" class="profile__add-button"></button>
+                    <button type="button" class="profile__add-button" id="profile-add-button"></button>
                 </section>
                 <section class="cards page__section">
                     <ul class="cards__list"></ul>
@@ -32,22 +32,41 @@
             </footer>
      </div>
      <div class="modal" id="profile-edit-modal">
-        <div class="modal__container">
+            <div class="modal__container">
+                <button class="modal__close"></button>
+                <h2 class="modal__heading">Edit Profile</h2>
+                <form class="modal__form">
+                    <input class="modal__input" id="profile-title-input" type="text" name="title" placeholder="name" required>
+                    <input class ="modal__input" id="profile-description-input" type="text" name="description" placeholder="description" required>
+                    <button class="modal__button" type="submit">Save</button>
+                </form>
+            </div>
+     </div>
+     <div class="modal" id="profile-add">
+            <div class="modal__container">
+                <button class="modal__close" id="add-close"></button>
+                <h2 class="modal__heading">New Place</h2>
+                <form class="modal__form" id="add-card-form">
+                    <input class="modal__input" id="pic-name-input" type="text" name="title" placeholder="Name" required>
+                    <input class ="modal__input" id="link-input" type="text" name="link" placeholder="Image Link" required>
+                    <button class="modal__button" type="submit">Save</button>
+                </form>
+            </div>
+     </div>
+     <div class="modal" id="card__image-modal">
+        <div class="modal__image-container">
             <button class="modal__close"></button>
-            <h2 class="modal__heading">Edit Profile</h2>
-            <form class="modal__form">
-                <input class="modal__input" id="profile-title-input" type="text" name="title" placeholder="name" required>
-                <input class ="modal__input" id="profile-description-input" type="text" name="description" placeholder="description" required>
-                <button class="modal__button" type="submit">Save</button>
-            </form>
+            <img src="" alt="" class="modal__image">
+            <h2 class="modal__title"></h2>
         </div>
      </div>
       <template id="card-template">
-            <li class="card">
+            <li class="card" id="card-layout">
                 <img src="" class="card__image" alt="">
+                <button class="card__delete-button"></button>
                 <div class="card__description">
                     <h3 class="card__title"></h3>
-                    <button type="button" class="card__like-button"></button>
+                    <button type="button" class="card__like-button" ></button>
                 </div>
             </li>
      </template>
