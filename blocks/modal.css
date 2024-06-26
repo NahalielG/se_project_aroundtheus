@@ -28,7 +28,6 @@
 
 .modal__image-container{
   position: relative;
-  transition-timing-function: ease-in;
 }
 
 .modal__image{
@@ -169,5 +168,6 @@ height: 540px;
    right: -35px;
    rotate: -45 deg;
    padding: 0;
+   margin: 0;
   }
 }
