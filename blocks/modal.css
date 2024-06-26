@@ -1,5 +1,4 @@
 .modal {
-  /*display: flex;*/
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -8,11 +7,14 @@
   bottom: 0;
   right: 0;
   z-index: 999;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: flex;
+
 }
 .modal_opened {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 .modal__container {
   background-color: white;
@@ -25,17 +27,25 @@
 
 .modal__image-container{
   position: relative;
-  border-radius: 10px 10px 10px 10px;
-  
+  transition-timing-function: ease-in;
 }
 
 .modal__image{
-
+width: 433px;
+height: 540px;
 }
 
 .modal__title{
-  
+  font-family: "Inter" Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  margin: 0;
+  color: #FFFFFF;
+ padding-top: 10px;
 }
+
 .modal__close {
   background-image: url(../images/Close\ Icon.svg);
   width: 40px;
@@ -47,6 +57,13 @@
   left: calc(100% + 5px);
   cursor: pointer;
   border: none;
+}
+.modal__close-image{
+  background-image: url(../images/Close\ Icon.svg);
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
 }
 .modal__close:hover {
   opacity: 0.6;
@@ -106,11 +123,9 @@
   }
   .modal__container {
     min-width: 282px;
-    width: 282px;
     top: 81px;
     left: 19px;
     border: 1px 0px 0px 0px;
-    opacity: 0px;
     position: fixed;
   }
 
@@ -121,5 +136,37 @@
     right: 18.62px;
     left: 264.62px;
     margin-bottom: 13px;
+  }
+  .modal__image {
+   width: 240px;
+   height: 299px;
+  }
+
+  .modal__title{
+    font-family: "Inter"Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  .modal__image-container{
+    border: 1px 0px 0px 0px;
+    position: fixed;
+    justify-content: center;
+    top:145px;
+    
+  }
+  .modal__close-image{
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   top: -35px;
+   right: -35px;
+   rotate: -45 deg;
+   padding: 0;
   }
 }
