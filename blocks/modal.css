@@ -64,6 +64,11 @@ height: 540px;
   background-size: contain;
   border: none;
   cursor: pointer;
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  height: 40px;
+  width: 40px;
 }
 .modal__close:hover {
   opacity: 0.6;
