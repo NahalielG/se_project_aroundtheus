@@ -60,7 +60,7 @@ height: 540px;
 }
 
 
-.modal__close:hover {
+.modal__close-button:hover {
   opacity: 0.6;
 }
 
@@ -156,3 +156,4 @@ height: 540px;
     justify-content: center;
     top:145px;
   }
+}
