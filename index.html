@@ -35,10 +35,12 @@
             <div class="modal__container">
                 <button class="modal__close-button"></button>
                 <h2 class="modal__heading">Edit Profile</h2>
-                <form class="modal__form">
-                    <input class="modal__input" id="profile-title-input" type="text" name="title" placeholder="name" required>
-                    <input class ="modal__input" id="profile-description-input" type="text" name="description" placeholder="description" required>
-                    <button class="modal__button" type="submit">Save</button>
+                <form class="modal__form" id="edit-profile-form">
+                  <input class="modal__input modal__input_type_error" id="profile-title-input" type="text" name="title" placeholder="name"  minlength="2" maxlength="40" required>
+                   <span class="modal__error" id="profile-title-input-error"></span>
+                    <input class ="modal__input modal__input_type_error" id="profile-description-input" type="text" name="description" placeholder="description" required minlength="2" maxlength="40"required>
+                    <span class="modal__error" id="profile-description-input-error"></span>
+                     <button class="modal__button modal__button_disabled" type="submit" disabled>Save</button>
                 </form>
             </div>
      </div>
@@ -47,9 +49,15 @@
                 <button class="modal__close-button" id="add-close"></button>
                 <h2 class="modal__heading">New Place</h2>
                 <form class="modal__form" id="add-card-form">
-                    <input class="modal__input" id="pic-name-input" type="text" name="title" placeholder="Title" required>
-                    <input class ="modal__input" id="link-input" type="text" name="link" placeholder="Image Link" required>
-                    <button class="modal__button" type="submit">Create</button>
+                    <label class="modal__label">
+                      <input class="modal__input modal__input_type_error" id="pic-name-input" type="text" name="title" placeholder="Title" required minlength="2" maxlength="40">
+                      <span class="modal__error" id="pic-name-input-error"></span>
+                    </label>
+                    <label class="modal__label">
+                     <input class ="modal__input " id="link-input" type="text" name="link" placeholder="Image Link" required>
+                     <span class="modal__error" id="link-input-error"></span>
+                    </label>
+                    <button class="modal__button modal__button_disabled" type="submit" disabled>Create</button>
                 </form>
             </div>
      </div>
@@ -70,6 +78,7 @@
                 </div>
             </li>
      </template>
+     <script src="./scripts/validation.js" defer></script>
      <script src="./scripts/index.js" defer></script>
   </body>
 </html>

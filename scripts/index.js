@@ -37,7 +37,7 @@ const initialCards = [
 /* -------------------------------------------------------------------------- */
 
 /* -------------------------- PROFILE MODAL ELMENTS ------------------------- */
-
+const modals = document.querySelectorAll (".modal")
 const profileEditButton = document.querySelector("#profile-edit-button");
 const modalCloseButton = document.querySelector(".modal__close-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -65,12 +65,30 @@ const modalImageTitle = document.querySelector(".modal__title");
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
 
+
+function useEscape (e) {
+  if (e.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+   if (e.target === modal) {
+    closeModal(modal)
+   }
+  })
+})
+
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", useEscape)
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", useEscape)
 }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -118,7 +136,7 @@ function handleProfileEditSubmit(e) {
 /*                               EVENT LISTENERS                              */
 /* -------------------------------------------------------------------------- */
 
-profileEditButton.addEventListener("click", () => {
+profileEditButton.addEventListener("click", handleProfileEditSubmit => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
   openModal(profileEditModal);
@@ -161,3 +179,5 @@ initialCards.forEach((cardData) => {
   const cardView = getCardElement(cardData);
   renderCard(cardView, cardListEl);
 });
+
+enableValidation(config);

@@ -111,6 +111,26 @@ height: 540px;
   opacity: 0.8;
 }
 
+.modal__error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: #FF0000;
+  width: 164px;
+}
+.modal__error_visible{
+  visibility: visible;
+}
+.modal__button_disabled {
+  background-image: url(../images/SubmitButton.svg) no-repeat;
+  width: 358px;
+  height: 50.15px;
+  border-radius: 2px 0px 0px 0px;
+  opacity: 50%;
+  pointer-events: none;
+}
 @media screen and (max-width: 620px) {
   .modal {
     position: fixed;
