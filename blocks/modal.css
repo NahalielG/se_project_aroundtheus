@@ -90,6 +90,9 @@ height: 540px;
   padding-bottom: 9px;
   font-size: 14px;
 }
+.modal__input_type_error{
+  border-color: #FF0000;
+}
 .modal__input::placeholder {
   color: #000;
 }
