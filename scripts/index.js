@@ -66,7 +66,7 @@ const modalImageTitle = document.querySelector(".modal__title");
 /* -------------------------------------------------------------------------- */
 
 
-function useEscape (e) {
+function handleCloseEscape  (e) {
   if (e.key === "Escape") {
     const modal = document.querySelector(".modal_opened");
     closeModal(modal);
@@ -83,12 +83,12 @@ modals.forEach((modal) => {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", useEscape)
+  document.addEventListener("keydown",handleCloseEscape)
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", useEscape)
+  document.removeEventListener("keydown", handleCloseEscape)
 }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
