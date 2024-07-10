@@ -33,7 +33,7 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
     submitButton.disabled = true;
   } else {
     submitButton.classList.remove(inactiveButtonClass);
-    return (submitButton.diabled = false);
+    return submitButton.disabled = false;
   }
 }
 
